@@ -1,0 +1,29 @@
+{
+  "name": "loopback-dns-cache-lab",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A bounded, loopback-only authoritative DNS cache laboratory",
+  "license": "MIT",
+  "author": "Lofrano Tecnologia",
+  "homepage": "https://lofranotecnologia.com.br",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/martinlofranodeoliveira/loopback-dns-cache-lab"
+  },
+  "engines": { "node": ">=22" },
+  "main": "build/src/index.js",
+  "types": "build/src/index.d.ts",
+  "scripts": {
+    "build": "tsc -p tsconfig.json",
+    "test": "npm run build && node --test --test-concurrency=1 build/test/*.test.js",
+    "demo": "tsc -p tsconfig.json && node build/lab/demo.js"
+  },
+  "dependencies": {
+    "dns-packet": "5.6.1"
+  },
+  "devDependencies": {
+    "@types/dns-packet": "5.6.5",
+    "@types/node": "22.20.5",
+    "typescript": "5.9.3"
+  }
+}
